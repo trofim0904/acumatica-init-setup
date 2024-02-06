@@ -1,0 +1,19 @@
+{
+  "providerId": "Microsoft.Tools.ServiceModel.Svcutil",
+  "version": "2.0.3",
+  "ExtendedData": {
+    "inputs": [
+      "http://localhost/US2023R1/api/ServiceGate.asmx"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, ServiceGate"
+    ],
+    "outputFile": "Reference",
+    "targetFramework": "net6.0",
+    "typeReuseMode": "All"
+  }
+}

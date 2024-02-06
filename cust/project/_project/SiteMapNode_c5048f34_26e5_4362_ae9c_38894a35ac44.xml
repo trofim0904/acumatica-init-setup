@@ -1,0 +1,47 @@
+﻿<SiteMapNode>
+    <data-set>
+        <relations format-version="3" relations-version="20190730" main-table="SiteMap">
+            <link from="MUIScreen (NodeID)" to="SiteMap (NodeID)" />
+            <link from="MUIWorkspace (WorkspaceID)" to="MUIScreen (WorkspaceID)" type="FromMaster" linkname="workspaceToScreen" split-location="yes" updateable="True" />
+            <link from="MUISubcategory (SubcategoryID)" to="MUIScreen (SubcategoryID)" type="FromMaster" updateable="True" />
+            <link from="MUITile (ScreenID)" to="SiteMap (ScreenID)" />
+            <link from="MUIWorkspace (WorkspaceID)" to="MUITile (WorkspaceID)" type="FromMaster" linkname="workspaceToTile" split-location="yes" updateable="True" />
+            <link from="MUIArea (AreaID)" to="MUIWorkspace (AreaID)" type="FromMaster" updateable="True" />
+            <link from="MUIPinnedScreen (NodeID, WorkspaceID)" to="MUIScreen (NodeID, WorkspaceID)" type="WeakIfEmpty" isEmpty="Username" />
+            <link from="MUIFavoriteWorkspace (WorkspaceID)" to="MUIWorkspace (WorkspaceID)" type="WeakIfEmpty" isEmpty="Username" />
+        </relations>
+        <layout>
+            <table name="SiteMap">
+                <table name="MUIScreen" uplink="(NodeID) = (NodeID)">
+                    <table name="MUIPinnedScreen" uplink="(NodeID, WorkspaceID) = (NodeID, WorkspaceID)" />
+                </table>
+                <table name="MUITile" uplink="(ScreenID) = (ScreenID)" />
+            </table>
+            <table name="MUIWorkspace">
+                <table name="MUIFavoriteWorkspace" uplink="(WorkspaceID) = (WorkspaceID)" />
+            </table>
+            <table name="MUISubcategory" />
+            <table name="MUIArea" />
+        </layout>
+        <data>
+            <sitemap>
+                <row Position="939" Title="Customization Projects" Url="~/Pages/SM/SM204505.aspx" ScreenID="SM204505" NodeID="c5048f34-26e5-4362-ae9c-38894a35ac44" ParentID="deeb974a-9865-4dfe-a3a8-594cf97a24d1">
+                    <muiscreen IsPortal="0" WorkspaceID="b6902036-c01f-44cb-84ff-340da661381b" Order="10" SubcategoryID="6d40b0b6-18f4-4139-adac-8ec8cb2a17ea">
+                        <muipinnedscreen IsPortal="0" Username="" IsPinned="1" />
+                    </muiscreen>
+                    <muiscreen IsPortal="0" WorkspaceID="37734ca5-ad06-4c01-89d5-7b6e0398803c" Order="10" SubcategoryID="6d40b0b6-18f4-4139-adac-8ec8cb2a17ea" />
+                </row>
+            </sitemap>
+            <muiworkspace>
+                <row IsPortal="0" WorkspaceID="b6902036-c01f-44cb-84ff-340da661381b" Order="148.625" Title="Customization" Icon="extension" AreaID="3635ea7d-0975-48ff-b4ac-a870f7e1e8b5" ScreenID="WSCS0000" IsSystem="0" />
+                <row IsPortal="0" WorkspaceID="37734ca5-ad06-4c01-89d5-7b6e0398803c" Order="38" Title="Configuration " Icon="build" AreaID="3635ea7d-0975-48ff-b4ac-a870f7e1e8b5" IsSystem="0" />
+            </muiworkspace>
+            <muisubcategory>
+                <row IsPortal="0" SubcategoryID="6d40b0b6-18f4-4139-adac-8ec8cb2a17ea" Order="128" Name="Profiles" Icon="" IsSystem="0" />
+            </muisubcategory>
+            <muiarea>
+                <row IsPortal="0" AreaID="3635ea7d-0975-48ff-b4ac-a870f7e1e8b5" Order="30" Name="Configuration" />
+            </muiarea>
+        </data>
+    </data-set>
+</SiteMapNode>
